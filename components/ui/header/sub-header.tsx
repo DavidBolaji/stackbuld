@@ -14,7 +14,7 @@ const buttonList = [
       {
         text: "Categories",
         search: "category",
-        list: ["Shirt", "Shorts", "Polo"],
+        list: ["Shirt", "Polo"],
       },
       {
         text: "Price",
