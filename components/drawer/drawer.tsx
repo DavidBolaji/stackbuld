@@ -43,15 +43,15 @@ const Drawer = () => {
              
               <div
                 onClick={handleToggle}
-                className="hover:bg-slate-100 cursor-pointer p-2 rounded-md"
+                className="hover:bg-slate-100 cursor-pointer w-full rounded-md"
               >
-                <Link href="/">Home</Link>
+                <Link href="/" className="w-full h-full  p-2 rounded-md inline-block ">Home</Link>
               </div>
               <div
                 onClick={handleToggle}
-                className="hover:bg-slate-100 cursor-pointer p-2 rounded-md"
+                className="hover:bg-slate-100 w-full  cursor-pointerrounded-md"
               >
-                <Link href="/create">Create</Link>
+                <Link href="/create" className="w-full h-full p-2 rounded-md inline-block">Create</Link>
               </div>
             </motion.div>
             <motion.div

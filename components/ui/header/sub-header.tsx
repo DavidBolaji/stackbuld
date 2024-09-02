@@ -32,13 +32,9 @@ const SubHeader: React.FC = () => {
   const [origin, setOrigin] = useState("/");
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const newUrl =
-      urlParams.entries().next().value?.[0] === "cat"
-        ? urlParams.entries().next().value?.[1] || path.replace("/", "")
-        : "/";
-    setOrigin(newUrl.trim().length ? newUrl : "/");
-  }, [path]);
+    const urlParams = searchParams.get("cat");
+    setOrigin(path !== "/" ? path.split('/')[1] : urlParams?.trim().length ? urlParams : "/");
+  }, [path, searchParams]);
 
   const handleItemClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const checkbox = e.currentTarget.querySelector(
@@ -56,8 +52,6 @@ const SubHeader: React.FC = () => {
     return paramValues?.includes(value) || false;
   };
 
-  
-
   return (
     <div className="h-14 z-50 bg-[#fafafa] border-b md:px-10 px-3 flex justify-between items-center sticky top-0">
       {origin !== "/" && (
@@ -65,7 +59,7 @@ const SubHeader: React.FC = () => {
           {origin}
         </div>
       )}
-      {(origin === "/" || !window?.location?.search?.includes("?cat")) && (
+      {origin === "/" && (
         <form
           action={filterProduct}
           className="flex h-full justify-end items-end w-full"
@@ -106,10 +100,7 @@ const SubHeader: React.FC = () => {
                               value={el}
                               type="checkbox"
                               className="bg-green-300"
-                              defaultChecked={isChecked(
-                                `prod_${search}`,
-                                el
-                              )}
+                              defaultChecked={isChecked(`prod_${search}`, el)}
                             />
 
                             <div className="inline">{el}</div>

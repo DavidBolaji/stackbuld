@@ -39,10 +39,11 @@ export default async function Home({searchParams}: {searchParams: HomeSearchPara
     );
   return (
     <main className="min-h-screen overflow-auto">
-      <div className="mt-20" />
+      <div className="mt-10" />
       <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-8">
         <ProductCard products={products} />
       </div>
+      <div className="mb-10" />
     </main>
   );
 }

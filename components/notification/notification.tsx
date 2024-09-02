@@ -39,7 +39,7 @@ const Notification: React.FC<INotification> = ({
           transition: {type: "spring"}
         }}
         transition={{ duration: 0.4 }}
-          className={`fixed  rounded-md overflow-hidden border-0 top-5 h-20 w-1/4 z-50 shadow right-1  bg-white ${
+          className={`fixed rounded-md w-3/4 overflow-hidden border-0 top-5 h-20 md:w-1/2 lg:w-1/4 z-50 shadow right-1  bg-white ${
             type === "success" ? "text-green-600" : "text-red-600"
           } text-white `}
         >
