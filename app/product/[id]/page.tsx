@@ -8,6 +8,8 @@ import { Product } from "@prisma/client";
 import { Metadata, ResolvingMetadata } from "next";
 import prisma from "@/db/db";
 
+export const revalidate = 0;
+
 type Props = {
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
