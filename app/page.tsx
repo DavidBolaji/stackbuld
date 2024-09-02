@@ -14,7 +14,7 @@ export default async function Home({searchParams}: {searchParams: HomeSearchPara
   const categories = searchParams.prod_category?.split(",") || [];
   const { min: minPrice, max: maxPrice } = extractMinMax(searchParams?.prod_price);
   const page = parseInt(searchParams.page) || 1;
-  const limit = parseInt(searchParams.limit) || 10;
+  const limit = parseInt(searchParams.limit) || 30;
 
   const products = await getProducts({
     categories: categories.map(el => el.toLowerCase()),
