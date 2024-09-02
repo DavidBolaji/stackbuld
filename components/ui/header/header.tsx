@@ -7,6 +7,10 @@ import Drawer from "@/components/drawer/drawer";
 
 const linkLists = [
   {
+    title: "Home",
+    href: "/",
+  },
+  {
     title: "create",
     href: "/create",
   },
@@ -14,7 +18,7 @@ const linkLists = [
 
 const Header = () => {
   const renderLink = linkLists.map((list) => (
-    <li key={list.title}>
+    <li key={list.title} className="w-full block">
       <Link
         href={list.href}
         className="font-bold md:block hidden uppercase text-sm pb-2 transition-colors duration-300 tracking-wide hover:border-b hover:border-orange-500"
@@ -30,8 +34,8 @@ const Header = () => {
         <div>
           <Image src={Logo.src} width={50} height={50} alt="logo" priority />
         </div>
-        <div>
-          <ul>{renderLink}</ul>
+        <div className="">
+          <ul className="w-full flex gap-x-3 items-center">{renderLink}</ul>
         </div>
         <Drawer />
       </nav>
