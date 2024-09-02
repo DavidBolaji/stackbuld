@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import SubHeader from "./sub-header";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
@@ -35,7 +35,9 @@ const Header = () => {
         </div>
         <Drawer />
       </nav>
-      <SubHeader />
+      <Suspense>
+        <SubHeader />
+      </Suspense>
     </>
   );
 };
