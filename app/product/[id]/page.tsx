@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import { getSingleProduct } from "@/actions/get-products";
 import { getCategories } from "@/actions/get-categories";
 import { Product } from "@prisma/client";
-import axios from "axios";
 import { Metadata, ResolvingMetadata } from "next";
+import prisma from "@/db/db";
 
 type Props = {
   params: { id: string };
@@ -16,8 +16,8 @@ type Props = {
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  let products = await axios.get(`${process.env.NEXT_PUBLIC_DEV}/product`);
-  return products.data.map((product: Product) => ({
+  const products = await prisma.product.findMany({})
+  return products.map((product: Product) => ({
     id: product.id,
   }));
 }
