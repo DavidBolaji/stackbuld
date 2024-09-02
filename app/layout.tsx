@@ -11,7 +11,7 @@ const barlow = Barlow({ weight: ["100", "400", "800"], subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Products Page",
   description:
-    "Davia Nigeria the #1 of Online Grocery Shopping in Nigeria - Shop Online All Groceries",
+    "Davia Nigeria the #1 of Online Product Shopping in Nigeria - Shop Online All Wears",
 };
 
 export default function RootLayout({
