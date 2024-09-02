@@ -40,6 +40,13 @@ const Drawer = () => {
               >
                 <FaTimes size={24} />
               </div>
+             
+              <div
+                onClick={handleToggle}
+                className="hover:bg-slate-100 cursor-pointer p-2 rounded-md"
+              >
+                <Link href="/">Home</Link>
+              </div>
               <div
                 onClick={handleToggle}
                 className="hover:bg-slate-100 cursor-pointer p-2 rounded-md"
