@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: "https://https://bolaji-stackbuld-test.netlify.app/sitemap.xml"
+        sitemap: "https://bolaji-stackbuld-test.netlify.app/sitemap.xml"
     }
 }
