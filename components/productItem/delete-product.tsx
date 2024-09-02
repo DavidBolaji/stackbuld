@@ -28,12 +28,11 @@ const DeleteProduct: React.FC<{ productId: string }> = ({ productId }) => {
     setLoading(true);
     try {
       await axios.delete(`/api/product/${productId}`);
-
-      setMessage("Delete Succesful");
-      await sleep(3000);
       handleCloseModal();
+      setMessage("Delete Succesful");
+      await sleep(1000);
       handleShowNotification();
-      await sleep(4000);
+      await sleep(3000);
     } catch (error) {
       setMessage((error as Error).message);
       handleShowNotification();

@@ -16,7 +16,7 @@ const Button: React.FC<IButton & PropsWithChildren> = ({
     <button
       {...prop}
       className={cn(
-        "w-full bg-black md:px-20 sm:px-10 px-5 py-2 rounded-lg disabled:bg-transparent disabled:border disabled:border-gray-300 text-white hover:scale-[1.01] transition-all duration-500",
+        "w-full bg-black md:px-20 sm:px-10 disabled:text-black px-5 py-2 rounded-lg disabled:bg-transparent disabled:border disabled:border-gray-300 text-white hover:scale-[1.01] transition-all duration-500",
         className
       )}
     >

@@ -28,9 +28,9 @@ export const PButton: React.FC<IPButton & PropsWithChildren> = ({
         img: product.img,
         category: product.category.name,
       });
+      setIsEditing(false);
       setMessage("Product Update Succesfull")
       await sleep(3000)
-      setIsEditing(false);
       handleShowNotification();
       router.refresh();
     } catch (error) {

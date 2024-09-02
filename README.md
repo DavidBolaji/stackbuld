@@ -90,7 +90,7 @@ To get started with the project, follow these steps:
 - `npm run test:watch`: Runs test while watching changes.
 
 ## Testing
-The project uses React Testing Library for testing. Tests are located in the src/tests directory. To run the tests, use the following command:
+The project uses React Testing Library for testing. Tests are located in the __test__ directory. To run the tests, use the following command:
 
 5. **Preview the production build**:
    ```bash
@@ -98,6 +98,6 @@ The project uses React Testing Library for testing. Tests are located in the src
   ```
 ## Conclusion
 
-This project setup ensures a modern, efficient, and maintainable frontend application. The combination of React, TypeScript, Tailwind and React Testing Library.
+This project setup ensures a modern, efficient, and maintainable frontend application. The combination of Next, TypeScript, Tailwind and React Testing Library.
 
 For more details on each section of the code, refer to the inline comments and documentation within the source files.

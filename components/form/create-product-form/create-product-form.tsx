@@ -6,7 +6,7 @@ import React from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Button from "../../button/button";
-import  StyledInput  from "../../input/styled-input";
+import StyledInput from "../../input/styled-input";
 import { initialValues, validationSchema } from "./validation-product-form";
 import Uploadcomponent from "../upload-component/upload-component";
 import StyledSelectInput from "@/components/input/styled-select-input";
@@ -25,12 +25,14 @@ const CreateProductForm: React.FC<{ categories: Category[] }> = ({
     try {
       await axios.post("/api/product", value);
       setMessage("Creation Succesful");
-      await sleep(3000);
+      await sleep(1000);
       handleShowNotification();
-      await sleep(4000);
+      await sleep(2000);
       router.push("/");
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
+      setMessage((error as Error).message);
+      handleShowNotification();
     }
   };
 
@@ -47,7 +49,7 @@ const CreateProductForm: React.FC<{ categories: Category[] }> = ({
           className="max-w-2xl mx-auto pt-10 space-y-8 pb-40"
         >
           <div className="flex gap-2 items-center italic">
-            <LuAsterisk color="red" size={14}  />
+            <LuAsterisk color="red" size={14} />
             <p className="-mt-0.5">Image is required</p>
           </div>
           <Field name="img" as={Uploadcomponent} />
